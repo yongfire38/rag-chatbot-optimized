@@ -16,7 +16,7 @@ Python 기반의 최적화된 RAG(Retrieval-Augmented Generation) 챗봇을 구�
 - 예: sample.pdf (회사 매뉴얼), data.csv (고객 데이터), notes.md (노트), report.docx (보고서), config.json (설정 파일).
 
 ## 프로젝트 구조
-
+```
 rag_chatbot_optimized/
 ├── app.py                    # 메인 Streamlit 애플리케이션
 ├── config/
@@ -39,10 +39,10 @@ rag_chatbot_optimized/
 ├── models/                   # LLM 모델 파일
 ├── requirements.txt
 └── README.md
-
+```
 ## 구동 방법
 
-- 필요한 의존성들 설치 
+### 필요한 의존성들 설치 
 
 ```
 pip install llama-index llama-index-llms-llama-cpp llama-index-embeddings-huggingface llama-index-vector-stores-faiss pymupdf streamlit python-docx pandas markdown
@@ -54,24 +54,24 @@ pip install faiss-cpu
 pip install faiss-gpu
 ```
 
-- 로컬 LLM 설정: Llama.cpp
+### 로컬 LLM 설정: Llama.cpp
 온프레미스에서 LLM을 돌리기 위해 Llama.cpp를 활용
 
 ```
 pip install llama-cpp-python
 ```
 
-- 프로젝트 루트에다가 models 디렉토리 만들고 파일 넣기
+### 프로젝트 루트에다가 models 디렉토리 만들고 파일 넣기
 -> 예제에서는 [ggml-model-Q4_0.gguf](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF) 를 사용. 다른 모델을 사용해도 무방할 것으로 보임
 
-- 프로젝트 루트에 docs 디렉토리 만들고 파일 넣기
+### 프로젝트 루트에 docs 디렉토리 만들고 파일 넣기
 - sample.pdf: 회사 매뉴얼
 - data.csv: 고객 데이터 (Name, Email, Purchase)
 - notes.md: 프로젝트 노트
 - report.docx: 프로젝트 보고서
 - config.json: 설정 데이터
 
-- `C:\Users\사용자 이름\.streamlit` 경로에 config.toml 만들고 다음과 같이 작성
+### `C:\Users\사용자 이름\.streamlit` 경로에 config.toml 만들고 다음과 같이 작성
 
 ```
 [server]
@@ -79,7 +79,7 @@ runOnSave = false
 fileWatcherType = "none"
 ```
 
-- 가상 환경에서 실행
+### 가상 환경에서 실행
 ```
 streamlit run app.py --global.developmentMode=false
 ```
